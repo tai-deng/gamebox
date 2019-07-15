@@ -1,0 +1,56 @@
+/* pages/mine/changePhone/changePhone.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9f7f2;
+    padding: 35rpx;
+}
+.title{
+    font-size: 28rpx;
+    color: #000;
+}
+.verify{
+    margin-bottom: 30rpx;
+    margin-top: 20rpx;
+}
+.verify-l{
+    margin-right: 30rpx;
+    flex: 1;
+    padding: 0 15rpx;
+    height: 80rpx;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+}
+input {
+    flex: 1;
+}
+.showbar{
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.showbara{
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    background: #cccccc;
+}
+button{
+    width: 680rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+}
+.a{
+    color: #ffffff;
+    background-color: #dddddd;
+}
+.b{
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}

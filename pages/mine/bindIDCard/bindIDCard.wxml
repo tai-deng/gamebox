@@ -1,0 +1,13 @@
+<!--pages/mine/bindIDCard/bindIDCard.wxml-->
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+    <view class="title">您的真实身份证：</view>
+    <view class="input-warp flexrow">
+        <input type="text" name="cardId"placeholder="请输入您的有效身份证号码" value="{{cardId}}" placeholder-class="inputStyle"/>
+    </view>
+    <view class="tip">
+        请输入您本人有效身份证号码，绝不对外泄漏！
+    </view>
+    <button class="row"data-tag="1" formType="submit" hover-class="none">确定</button>
+</view>
+</form>

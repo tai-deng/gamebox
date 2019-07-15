@@ -1,0 +1,17 @@
+<!--pages/index/integral/integral.wxml-->
+<view class="container">
+    <view class="title">仅支持查询手机端的缴费记录</view>
+    <view class="details flexrow"wx:for="{{data}}"wx:key="{{item}}">
+        <view class="details-icon">
+            <image src='../../img/payment.png'></image>
+        </view>
+        <view class="details-center column">
+            <view class="details-center-top flexrow">
+                <view class="details-center-top-l">{{item.phoneNum}}</view>
+                <view class="details-center-top-r">缴费{{item.amount}}元</view>
+            </view>
+            <view class="details-center-bottom">{{item.data}}</view>
+        </view>
+        <view class="details-right">{{item.fundType}}</view>
+    </view>
+</view>

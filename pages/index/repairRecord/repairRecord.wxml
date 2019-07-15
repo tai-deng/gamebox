@@ -1,0 +1,61 @@
+<!--pages/index/repairRecord/repairRecord.wxml-->
+<view class="container">
+    <view class="tab flexrow">
+        <view class="tab-item row {{tabItem == index ? 'select': ''}}" data-index="{{index}}" bindtap='bindtab' wx:for="{{tabv}}" wx:key="{{item}}">
+            {{item}}
+        </view>
+    </view>
+    <view class="content"wx:for="{{list.result}}"wx:key="{{index}}"bindtap='onDetail'data-id="{{item.id}}">
+        <view class="content-title rows">
+            <view class="content-title-l flexrow">
+                <image src='../../img/bianhao.png' />
+                订单编号：{{item.orderNo}}
+            </view>
+            <view class="content-title-r">
+                {{tabv[item.orderState]}}
+            </view>
+        </view>
+        <view class="content-ct flexrow">
+            <view class="content-ct-l">
+                <image src="{{item.img1}}"/>
+            </view>
+            <view class="content-ct-r flexcolumn">
+                <view class="content-ct-r-t">故障物品：{{item.repairArea}}</view>
+                <view class="content-ct-r-b flexrow">故障物品：
+                    <view class="adr">{{item.repairAddress}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="content-status rows">
+            <view class="content-status-l">
+                <view class="content-status-t">
+                    <block wx:if="{{item.orderState==1}}">
+                        订单已提交成功，等待处理！
+                    </block>
+                    <block wx:elif="{{item.orderState==2}}">
+                        订单处理中！
+                    </block>
+                    <block wx:elif="{{item.orderState==3}}">
+                        订单已完成！
+                    </block>
+                    <block wx:elif="{{item.orderState==4}}">
+                        您的订单已关闭！
+                    </block>
+                </view>
+                <view class="content-status-b">
+                    {{item.repairDate}}
+                </view>
+            </view>
+            <view class="content-status-r row" wx:if="{{item.orderState==1}}" data-id="{{item.id}}" catchtap="onRecall">
+                撤回
+            </view>
+        </view>
+    </view>
+    <view class="content row" wx:if="{{!list.result[0]}}">
+        暂无数据
+    </view>
+    <navigator class="repair column" url="/pages/index/repairRecord/myRepair" open-type="navigate">
+        <image src='../../img/baoxiu.png'/>
+        报修
+    </navigator>
+</view>

@@ -1,0 +1,98 @@
+/* pages/changePay/changePay.wxss */
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+.title{
+    font-size: 30rpx;
+    height: 70rpx;
+    color: red;
+    background-color: #efeff4;
+}
+.content{
+    background-color: #fff;
+    color: #999999;
+    font-size: 26rpx;
+}
+.content-v{
+    padding: 20rpx;
+    border-top: 1px solid #f1f1f1;
+}
+.content-v-l{
+}
+.content-v-r {
+    color: #000000;
+}
+.button{
+    position: absolute;
+    left: 35rpx;
+    bottom: 50rpx;
+    width: 680rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+
+.popUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.popUp-content{
+    width: 660rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+.popUp-content-c{
+    font-size: 26rpx;
+    color: #888888;
+    padding: 25rpx;
+}
+.popUp-content-c-icon image {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+}
+.popUp-content-c-title {
+    margin-top: 25rpx;
+}
+.popUp-content-c-tip {
+    margin-top: 30rpx;
+}
+.popUp-content-c-input{
+    border: 1px solid rgba(0,0,0,.3);
+    height: 60rpx;
+    width: 600rpx;
+    padding-left: 5rpx;
+    margin-top: 25rpx;
+}
+input{
+    width: 100%;
+}
+.popUp-content-bar{
+    font-size: 32rpx;
+    margin-top: 20rpx;
+    color: #ff5800;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+.popUp-bar-l{
+    height: 80rpx;
+    flex: 1;
+    border-right: 1px solid rgba(0,0,0,.3);
+}
+.popUp-bar-r{
+    height: 80rpx;
+    flex: 1;
+    font-weight: 700;
+}
+.price{
+    color: #ff5800;
+}

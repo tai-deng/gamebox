@@ -1,0 +1,92 @@
+/* pages/register/register.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+}
+.logo{
+    padding-top: 80rpx;
+    padding-bottom: 118rpx;
+}
+.logo-pic{
+    width: 115rpx;
+    height: 77rpx;
+    display: block;
+}
+.logo-label{
+    font-size: 32rpx;
+    color: #ff5a10;
+    margin-top: 22rpx;
+}
+.entry{
+    width: 540rpx;
+    height: 80rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 40rpx;
+    margin-left: 105rpx;
+    margin-bottom: 30rpx;
+}
+.entry > image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    margin-left: 36rpx;
+}
+.inputStyle {
+    font-size: 24rpx;
+    color: #9a9a9a;
+}
+button{
+    width: 540rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-left: 105rpx;
+    font-size: 32rpx;
+    color: #ffffff;
+    margin-bottom: 25rpx;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.register{
+    width: 750rpx;
+    height: 30rpx;
+    font-size: 24rpx;
+    color: #9a9a9a;
+    position: fixed;
+    bottom: 20rpx;
+    left: 0;
+}
+.register_b{
+    color: #5e5e5e;
+}
+input{
+    flex: 1;
+    padding-left: 20rpx;
+}
+
+.input-warp{
+    width: 450rpx;
+    height: 80rpx;
+}
+.showbar{
+    width: 179rpx;
+    height: 60rpx;
+    margin-right: 10rpx;
+    border-radius: 40rpx;
+    font-size: 24rpx;
+    color: #ff5800;
+    background:#ffffff;
+    border: 1px solid #ff5800;
+}
+.showbara{
+    width: 179rpx;
+    height: 60rpx;
+    margin-right: 10rpx;
+    border-radius: 40rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+    border: 1px solid #cccccc;
+    background: #cccccc;
+}
+.login {
+    margin-top: 50rpx;
+}

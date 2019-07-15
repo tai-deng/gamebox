@@ -1,0 +1,175 @@
+<!--index.wxml-->
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+    <view class="menu-usesr row">
+        <view class="menu-bj">
+            <image src="../img/bj-index.png"></image>
+        </view>
+        <view class="shool row">{{site.sitename}}</view>
+        <view class="menu-list row">
+            <view class="tapStyle list-i list-up column" open-type="navigate">
+                <view class="list-up-v column">
+                    剩余金额
+                    <view class="list-up-price">{{broadband.accountFee?broadband.accountFee:'0'}}元</view> 
+                </view></view>
+            <navigator class="tapStyle list-i list-right column"url="/pages/index/integral/integral" open-type="navigate"><view class="list-right-v">缴费历史</view></navigator>
+            <view class="tapStyle list-i list-down column" bindtap="onKdpay"><view class="list-down-v">宽带缴费</view></view>
+            <navigator class="tapStyle list-i list-left column"url="/pages/index/explain/explain" open-type="navigate"><view class="list-left-v">资费说明</view></navigator>
+            <view class="list-mid column">
+                <view class="list-mid-up">{{data.menu.tip}}</view>
+                <view class="list-mid-down row">{{UserNum}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="broadbandInfo row">
+    当前套餐：{{broadband.packageName}} 到期日：{{broadband.periodLimitTime}}
+    </view>
+    <view class="menu-bar flexrow">
+        <view class="menu-bar-i upward column"bindtap="onLaundry">
+            <view class="menu-bar-warp recharge row">
+                <image src="../img/hf.png"></image>
+            </view>
+            <view class="bar-text">话费充值</view>
+        </view>
+        <view class="menu-bar-i column" bindtap='service'>
+            <view class="menu-bar-warp laundry row">
+                <image src="../img/repairs.png"></image>
+            </view>
+            <view class="bar-text">故障报修</view>
+        </view>
+        <view class="menu-bar-i column"bindtap="openAPP">
+            <view class="menu-bar-warp water row">
+                <image src="../img/rs.png"></image>
+            </view>
+            <view class="bar-text">热水</view>
+        </view>
+        <view bindtap="onChangetc" class="menu-bar-i upward column" open-type="navigate" hover-class="none">
+            <view class="menu-bar-warp integral row">
+                <image src="../img/jf.png"></image>
+            </view>
+            <view class="bar-text">换套餐</view>
+        </view>
+    </view>
+    <view class="linber"></view>
+    <view class="entry-title row">快速充值</view>
+    <view class="entry row">
+        <input type="number" name="userid"placeholder="请输入学号/身份证号" value="{{UserNum}}" placeholder-class="inputStyle"/>
+    </view>
+    <button class="login row" data-tag="1" formType="submit" hover-class="none">
+        宽带快速续费
+    </button>
+    <view class="popup-bg row"wx:if="{{popup}}">
+        <view class="popup-content">
+            <view class="popup-content-title row">完善以下资料使用服务</view>
+
+            <view class="popup-content-cancel row"bindtap="onCancel">
+                <image src="../img/cancel.png"></image>
+            </view>
+
+            <view class="popup-content-tip">
+                温馨提示：请准确填写您的真实资料！如未开通快带账号，请记住您的宽带用户名，湘中幼师和大众传媒:<text class="popup-content-tip-b">宽带账号填写身份证号码</text>
+            </view>
+            <view class="popup-content-bar"></view>
+
+            <view class="popup-content-item flexrow">
+                <view class="popup-content-item-l row">学校名称</view>
+                <view class="popup-content-item-r">
+                    <picker bindchange="onOptions" data-tag="1" value="{{index}}" range="{{school}}">
+                        <view class="picker rows">
+                            <view class="picker-l">{{school_v ? school_v : '请选择所在的学校'}}</view>
+                            <view class="picker-r">
+                                <image src="../img/down-pull.png"></image>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            
+            <view class="popup-content-item flexrow">
+                <view class="popup-content-item-l row">宽带账号</view>
+                <view class="popup-content-item-r row">
+                    <input type="number" name="broadband" value="{{workNumber}}" bindblur="onbroadband" placeholder="{{broadbandP ? '请输入身份证号码' : '请输入学号'}}" placeholder-class="inputStyle"/>
+                </view>
+            </view>
+
+            <view class="popup-content-item flexrow">
+                <view class="popup-content-item-l row">真实姓名</view>
+                <view class="popup-content-item-r row">
+                    <input type="text" name="name" placeholder="请输入真实姓名" placeholder-class="inputStyle"/>
+                </view>
+            </view>
+
+            <view class="popup-content-item flexrow"wx:if="{{profit}}">
+                <view class="popup-content-item-l row">院　　系</view>
+                <view class="popup-content-item-r">
+                    <picker bindchange="onOptions" data-tag="2" value="{{index}}" range="{{depart}}">
+                        <view class="picker rows">
+                            <view class="picker-l">{{depart_v ? depart_v : '请选择所在的院系'}}</view>
+                            <view class="picker-r">
+                                <image src="../img/down-pull.png"></image>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="popup-content-item flexrow"wx:if="{{profit}}">
+                <view class="popup-content-item-l row">班　　级</view>
+                <view class="popup-content-item-r">
+                    <picker bindchange="onOptions" data-tag="3" value="{{index}}" range="{{cls}}">
+                        <view class="picker rows">
+                            <view class="picker-l">{{cls_v ? cls_v : '请选择所在的班级'}}</view>
+                            <view class="picker-r">
+                                <image src="../img/down-pull.png"></image>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <button class="login row" data-tag="2" formType="submit" hover-class="none">
+                确定
+            </button>
+        </view>
+    </view>
+    
+    <view class="popUpB columns"wx:if="{{join}}">
+        <view class="popUpB-out"catchtap="onPopD"></view>
+        <view class="popUpB-content">
+            <view class="popUpB-title row">付款详情</view>
+            <view class="popUpB-content-item rows">
+                <view class="popUpB-content-l flexrow">
+                    当前套餐
+                </view>
+                <view class="popUpB-content-r">{{broadband.packageName}}</view>
+            </view>
+            <view class="popUpB-content-item rows">
+                <view class="popUpB-content-l flexrow">
+                    缴费对象
+                </view>
+                <view class="popUpB-content-r">{{broadband.userId}}</view>
+            </view>
+            <view class="popUpB-content-item rows">
+                <view class="popUpB-content-l flexrow">
+                    付款方式
+                </view>
+                <view class="popUpB-content-r">微信</view>
+            </view>
+            <view class="popUpB-content-item rows">
+                <view class="popUpB-content-l flexrow">
+                    支付金额
+                </view>
+                <view class="popUpB-content-r maincolor">{{broadband.amount}}元</view>
+            </view>
+            <view class="button tag-b row"bindtap="onAffirm">
+                确认支付
+            </view>
+        </view>
+    </view>
+
+    <!-- <view class="popup-bg row"wx:if="{{open}}">
+        <view class="popup-content" bindtap="onApp">
+          确认
+        </view>
+    </view> -->
+</view>
+</form>

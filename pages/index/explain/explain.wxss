@@ -1,0 +1,19 @@
+/* pages/index/explain/explain.wxss */
+.container{
+    padding: 5rpx 10rpx;
+    font-size: 26rpx;
+    color: gray;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9f7f2;
+}
+.maincolor {
+    color: #ff5800;
+}
+.title {
+    font-size: 30rpx;
+    padding: 5rpx 0;
+}
+.inline {
+    display:inline;
+}

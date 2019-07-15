@@ -1,0 +1,28 @@
+<!--pages/signIn/signIn.wxml-->
+
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+    <view class="logo column">
+        <image class="logo-pic" src="../img/logo.png"></image>
+        <view class="logo-label">您的校园服务助手</view>
+     </view>
+    <view class="entry flexrow">
+        <image src="../img/account.png"></image>
+        <input type="number" name="phone"placeholder="填写手机号码" value="{{phone}}" placeholder-class="inputStyle"/>
+    </view>
+    <view class="entry flexrow">
+        <image src="../img/password.png"></image>
+        <input type="password" name="password"placeholder="请输入登录密码" value="{{password}}" placeholder-class="inputStyle"/>
+    </view>
+    <button class="login row" formType="submit" hover-class="none">
+        登录
+    </button>
+    <navigator class="forget" url="/pages/signIn/forget" hover-class="none">
+        忘记密码?
+    </navigator>
+    <navigator class="row register" url="/pages/register/register" hover-class="none">
+        还没有账号?
+        <view class="register_b">立即注册</view>
+    </navigator>
+</view>
+</form>

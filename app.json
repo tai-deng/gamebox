@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/signIn/signIn",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/signIn/forget",
+    "pages/register/register",
+    "pages/mine/mine",
+    "pages/index/recharge/recharge",
+    "pages/index/laundry/laundry",
+    "pages/index/integral/integral",
+    "pages/index/explain/explain",
+    "pages/index/combo/combo",
+    "pages/chooseTaocan/chooseTaocan",
+    "pages/changePay/changePay",
+    "pages/index/payment/payment",
+    "pages/index/payment/order/order",
+    "pages/mine/bindIDCard/bindIDCard",
+    "pages/mine/safety/safety",
+    "pages/mine/changePhone/changePhone",
+    "pages/mine/changePassword/changePassword",
+    "pages/index/repairRecordWorker/repairRecordWorker",
+    "pages/index/repairRecord/repairRecord",
+    "pages/index/repairRecord/myRepair",
+    "pages/index/repairDetail/repairDetail",
+    "pages/mine/feedback/feedback",
+    "pages/mine/feedback/feedbackList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff8f00",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5800",
+    "color": "#5e5e5e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/home-b.png",
+        "selectedIconPath": "pages/img/home-a.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/img/mine-b.png",
+        "selectedIconPath": "pages/img/mine-a.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx2ded7c2a06ef15ea"
+  ]
+}

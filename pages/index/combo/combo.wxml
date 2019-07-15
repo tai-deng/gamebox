@@ -1,0 +1,171 @@
+<!--pages/index/combo/combo.wxml-->
+<view class="container">
+    <block wx:if="{{done}}">
+    <view class="user-title flexrow">
+        <view class="user-title-r">{{order.userId}}</view>
+        <view class="user-title-l">当前套餐</view>
+    </view>
+    <view class="content">
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../img/tcan.png"></image>
+                </view>
+                套餐：
+            </view>
+            <view class="content-r">{{order.packageName}}</view>
+        </view>
+
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../img/zfei.png"></image>
+                </view>
+                资费：
+            </view>
+            <view class="content-r">{{order.amount}}</view>
+        </view>
+        
+        <view class="content-item rows">
+            <view class="content-l flexrow maincolor">
+                <view class="content-l-icon row">
+                    <image src="../../img/shixrq.png"></image>
+                </view>
+                失效日期：
+            </view>
+            <view class="content-r maincolor">{{order.periodLimitTime}}</view>
+        </view>
+    </view>
+    <block wx:if="{{flag==1}}">
+        <view class="content">
+            <block wx:for="{{data}}">
+                <view class="content-title flexrow">{{item.name}}</view>
+                <view class="content-v flexwrap">
+                    <view class="content-v-item {{it.sel ? 'v-a':'v-b'}} column {{order.packageId == it.id ? 'repair-a':''}}"
+                        wx:for="{{item.serSets}}" wx:for-item='it'wx:for-index="in"
+                        bindtap="onSelect"data-index="{{in}}"data-ins="{{index}}"
+                        data-id="{{it.id}}">
+                        <view class="label maincolor"wx:if="{{order.packageId == it.id}}">当前套餐</view>
+                        <view class="content-v-item-up">{{it.amount}}元</view>
+                        <view class="content-v-item-down">{{it.setRemark}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:elif="{{flag ==2}}">
+    <view class="content">
+        <view class="content-item">
+            更换套餐
+        </view>
+
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../img/tcan.png"></image>
+                </view>
+                套餐：
+            </view>
+            <view class="content-r">{{newOrder.name}}</view>
+        </view>
+
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../img/zfei.png"></image>
+                </view>
+                资费：
+            </view>
+            <view class="content-r">{{newOrder.amount}}</view>
+        </view>
+    </view>
+    </block>
+    <view class="tip">
+        <view class="tip-title">温馨提示：</view>
+        <view class="tip-item felxrow">1、新套餐将在<view class="tip-fea">当前套餐失效后</view>立即生效。</view>
+        <view class="tip-item">2、校园网服务中心地址：{{address}}</view>
+    </view>
+    <view class="button tag-a row"bindtap="onSubmit"data-tag='1'>
+        下一步
+    </view>
+    <view class="popUp row"wx:if="{{popUp}}">
+        <view class="popUp-content">
+            <view class="popUp-content-c column">
+                <view class="popUp-content-c-icon">
+                    <image src="../../img/jgao.png"></image>
+                </view>
+                <view class="popUp-content-c-title">
+                    请输入您的宽带登录密码：
+                </view>
+                <view class="popUp-content-c-tip">
+                    1、密码默认为身份证后六位（X小写），错误请前往营业厅找回。
+                </view>
+                <view class="popUp-content-c-input row">
+                    <input type="text"value="{{passWord}}"focus='true'bindinput="onInput"/>
+                </view>
+            </view>
+            <view class="popUp-content-bar flexrow">
+                <view class="popUp-bar-l row"bindtap="onCancel">取消</view>
+                <view class="popUp-bar-r row"bindtap="onConfirm">确定</view>
+            </view>
+        </view>
+    </view>
+    </block>
+    <block wx:else>
+        <view class="done-info column">
+            <view class="done-icon">
+                <image src="../../img/done.png"></image>
+            </view>
+            <view class="done-declare">套餐修改成功</view>
+            <view class="done-declare">生效日期{{doneData.activeDate}}</view>
+        </view>
+        <view class="done-pay button row"bindtap='onJoin'>预约费用</view>
+        <navigator class="done-pay button row" url="/pages/index/index"open-type='switchTab' hover-class="none"bindtap='onBack'>返回首页</navigator>
+        <view class="done-tip">
+            <view class="done-tip-title">温馨提示：</view>
+            <view class="done-tip-content">
+                1、套餐更改成功后，需要支付费用后在{{doneData.activeDate}}方可生效。
+            </view>
+        </view>
+        
+        <view class="popUpB columns"wx:if="{{join}}">
+            <view class="popUpB-out"catchtap="onPopD"></view>
+            <view class="popUpB-content">
+                <view class="popUpB-title row">付款详情</view>
+                <view class="popUpB-content-item rows">
+                    <view class="popUpB-content-l flexrow">
+                        预存套餐
+                    </view>
+                    <view class="popUpB-content-r">{{doneData.name}}</view>
+                </view>
+                <view class="popUpB-content-item rows">
+                    <view class="popUpB-content-l flexrow">
+                        缴费对象
+                    </view>
+                    <view class="popUpB-content-r">{{doneData.userId}}</view>
+                </view>
+                <view class="popUpB-content-item rows">
+                    <view class="popUpB-content-l flexrow">
+                        付款方式
+                    </view>
+                    <view class="popUpB-content-r">微信</view>
+                </view>
+                <view class="popUpB-content-item rows">
+                    <view class="popUpB-content-l flexrow">
+                        账户余额
+                    </view>
+                    <view class="popUpB-content-r">{{doneData.accountFee}}元</view>
+                </view>
+                <view class="popUpB-content-item rows">
+                    <view class="popUpB-content-l flexrow">
+                        支付金额
+                    </view>
+                    <view class="popUpB-content-r maincolor">{{doneData.amount}}元</view>
+                </view>
+                <view class="button tag-b row"bindtap="onAffirm">
+                    确认支付
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

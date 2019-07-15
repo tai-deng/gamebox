@@ -1,0 +1,40 @@
+<!--pages/chooseTaocan/chooseTaocan.wxml-->
+<view class="container">
+    <view class="title flexrow">请选择宽带套餐</view>
+    <view class="content">
+        <block wx:for="{{data}}">
+        <view class="content-title flexrow">{{item.name}}</view>
+        <view class="content-v flexwrap">
+            <view class="content-v-item {{it.sel ? 'v-a':'v-b'}} column"wx:for="{{item.serSets}}" wx:for-item='it'wx:for-index="in"bindtap="onSelect"data-index="{{in}}"data-ins="{{index}}" data-id="{{it.id}}">
+                <view class="content-v-item-up">{{it.amount}}元</view>
+                <view class="content-v-item-down">{{it.setRemark}}</view>
+            </view>
+        </view>
+        </block>
+    </view>
+    <view class="button row"bindtap="onDredge">
+        开通宽带
+    </view>
+    <view class="popUp row"wx:if="{{popUp}}">
+        <view class="popUp-content">
+            <view class="popUp-content-c column">
+                <view class="popUp-content-c-icon">
+                    <image src="../img/jgao.png"></image>
+                </view>
+                <view class="popUp-content-c-title">
+                    请设置您的宽带登录密码：
+                </view>
+                <view class="popUp-content-c-tip">
+                    1、请牢记设置密码，如有遗忘，请去网络服务中心处理。
+                </view>
+                <view class="popUp-content-c-input row">
+                    <input type="text"value="{{passWord}}" bindblur="onInput"/>
+                </view>
+            </view>
+            <view class="popUp-content-bar flexrow">
+                <view class="popUp-bar-l row"bindtap="onCancel">取消</view>
+                <view class="popUp-bar-r row"bindtap="onConfirm">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,110 @@
+/* pages/chooseTaocan/chooseTaocan.wxss */
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+.title{
+    font-size: 30rpx;
+    padding-left: 20rpx;
+    height: 70rpx;
+    color: red;
+}
+.content{
+    background-color: #fff;
+    color: #888888;
+    font-size: 24rpx;
+    padding: 20rpx;
+}
+.content-title{
+    height: 40rpx;
+}
+.content-v-item{
+    width: 220rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+.content-v-item-down {
+    width: 220rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.button{
+    position: absolute;
+    left: 35rpx;
+    bottom: 50rpx;
+    width: 680rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.v-b {
+    border: 1px solid #f1f1f1;
+    border-radius: 10rpx;
+}
+.v-a {
+    border: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+}
+
+.popUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.popUp-content{
+    width: 560rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+.popUp-content-c{
+    font-size: 26rpx;
+    color: #888888;
+    padding: 25rpx;
+}
+.popUp-content-c-icon image {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+}
+.popUp-content-c-title {
+    margin-top: 25rpx;
+}
+.popUp-content-c-tip {
+    margin-top: 30rpx;
+}
+.popUp-content-c-input{
+    border: 1px solid rgba(0,0,0,.3);
+    height: 60rpx;
+    width: 500rpx;
+    padding-left: 5rpx;
+    margin-top: 25rpx;
+}
+input{
+    width: 100%;
+}
+.popUp-content-bar{
+    font-size: 32rpx;
+    margin-top: 20rpx;
+    color: #ff5800;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+.popUp-bar-l{
+    height: 80rpx;
+    flex: 1;
+    border-right: 1px solid rgba(0,0,0,.3);
+}
+.popUp-bar-r{
+    height: 80rpx;
+    flex: 1;
+    font-weight: 700;
+}

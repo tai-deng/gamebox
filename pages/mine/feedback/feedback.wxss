@@ -1,0 +1,38 @@
+/* pages/mine/feedback/feedback.wxss */
+.container{
+    background-color: #fff;
+    position: relative;
+}
+.record{
+    text-align: right;
+    font-size: 24rpx;
+    color: #ff5800;
+    padding: 20rpx;
+    background-color: #fffcf9;
+}
+.record image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.textare-warp{
+    padding: 25rpx;
+}
+.textare-warp textarea{
+    font-size: 26rpx;
+    width: 680rpx;
+    height: 380rpx;
+    padding: 10rpx;
+    border: 1px solid  #999;
+    border-radius: 20rpx;
+}
+.submit {
+    margin-left: 25rpx;
+    margin-top: 60rpx;
+    width: 700rpx;
+    height: 80rpx;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 40rpx;
+    background:-webkit-gradient(linear, 0% 0%, 100% 0%, from(#ff8f00), to(#ff5800));
+}

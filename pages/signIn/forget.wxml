@@ -1,0 +1,55 @@
+<!--pages/signIn/forget.wxml-->
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+
+    <block wx:if="{{flag==1}}">
+        <view class="entry flexrow">
+            <input type="number" name="phone"placeholder="请输入当前登录的手机号" value="{{phone}}" placeholder-class="inputStyle"/>
+        </view>
+        <view class="text-tip">点击下一步，系统将发送一条短信验证码给您</view>
+        <button class="next row" formType="submit" hover-class="none">
+            下一步
+        </button>
+    </block>
+
+    <block wx:elif="{{flag == 2}}">
+        <view class="text-tip-b">验证码短信发送至{{data.phone}}</view>
+        <view class="entry-warp rows">
+            <view class="input-warp flexrow">
+                <input type="number" name="vcode"placeholder="请输入验证码" value="{{vcode}}" placeholder-class="inputStyle"/>
+            </view>
+            <view class="{{tap?'showbara':'showbar'}} row" bindtap="onVcode">{{data.show}}</view>
+        </view>
+        <button class="next row" formType="submit" hover-class="none">
+            确定
+        </button>
+    </block>
+
+    <block wx:elif="{{flag == 3}}">
+        <view class="entry-warp rows">
+            <view class="input-warp-b flexrow">
+                <input type="{{isLook?'number':'password'}}" name="password"placeholder="请输入新的登录密码" value="{{password}}" placeholder-class="inputStyle"/>
+            </view>
+            <view class="eye row" bindtap="onEye">
+                <image src="../img/eyeS.png" wx:if="{{isLook}}"></image>
+                <image src="../img/eyeH.png" wx:else></image>
+            </view>
+        </view>
+        <button class="next row" formType="submit" hover-class="none">
+            完成
+        </button>
+    </block>
+
+    <block wx:elif="{{flag == 4}}">
+        <view class="done-warp flexcolumn">
+            <view class="done column">
+                <image src="../img/logobig.png"></image>
+                <view class="done-text">密码修改成功</view>
+            </view>
+            <navigator url="/pages/signIn/signIn" open-type="reLaunch" hover-class="none" class="next row">
+                返回登录
+            </navigator>
+        </view>
+    </block>
+</view>
+</form>

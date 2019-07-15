@@ -1,0 +1,168 @@
+<!--pages/index/payment/order/order.wxml-->
+<view class="container">
+    <view class="user-title rows">
+        <view class="user-title-l">用户信息</view>
+        <navigator url="/pages/index/integral/integral" open-type="navigate" hover-class="none" class="user-title-r flexrow">
+            <image src="../../../img/front.png"></image>
+            缴费历史
+        </navigator>
+    </view>
+    <view class="content">
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/tcan.png"></image>
+                </view>
+                当前套餐：
+            </view>
+            <view class="content-r">{{userData.packageName}}</view>
+        </view>
+
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/zfei.png"></image>
+                </view>
+                资费标准：
+            </view>
+            <view class="content-r">{{userData.amount}}</view>
+        </view>
+
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/zfei.png"></image>
+                </view>
+                当前余额：
+            </view>
+            <view class="content-r">{{userData.accountFee}}</view>
+        </view>
+        
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/front.png"></image>
+                </view>
+                生效日期：
+            </view>
+            <view class="content-r">{{userData.periodStartTime}}</view>
+        </view>
+        
+        <view class="content-item rows">
+            <view class="content-l flexrow maincolor">
+                <view class="content-l-icon row">
+                    <image src="../../../img/shixrq.png"></image>
+                </view>
+                到效日期：
+            </view>
+            <view class="content-r maincolor">{{userData.periodLimitTime}}</view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/yuanxi.png"></image>
+                </view>
+                宽带账号：
+            </view>
+            <view class="content-r">{{userData.userId}}</view>
+        </view>
+        
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                <view class="content-l-icon row">
+                    <image src="../../../img/name.png"></image>
+                </view>
+                姓名：
+            </view>
+            <view class="content-r">{{userData.userName}}</view>
+        </view>
+
+    </view>
+    <view class="content">
+        <view class="content-item arrange flexrow">
+            <view class="num-bar flexrow maincolor">
+                <view class="num-bar-l"bindtap="onMinus"data-flag='1'>
+                    <image src="../../../img/minus.png"></image>
+                </view>
+                <view class="num-bar-c row">{{num}}</view>
+                <view class="num-bar-l"bindtap="onMinus"data-flag='2'>
+                    <image src="../../../img/add.png"></image>
+                </view>
+            </view>
+        </view>
+        
+        <view class="content-item rows">
+            <view class="content-l flexrow">
+                金额：
+            </view>
+            <view class="content-r maincolor">{{money}}元</view>
+        </view>
+    </view>
+    <view class="more-pop"wx:if="{{more}}">
+        <view class="user-title repair rows">
+            <view class="user-title-l">校园网络资费标准</view>
+            <navigator url="/pages/index/explain/explain" open-type="navigate" hover-class="none" class="user-title-r flexrow">
+                资费说明？
+            </navigator>
+        </view>
+
+        <view class="content">
+            <block wx:for="{{data}}">
+                <view class="content-title flexrow">{{item.name}}</view>
+                <view class="content-v flexwrap">
+                    <view class="content-v-item {{it.sel ? 'v-a':'v-b'}} column {{userData.packageId == it.id ? 'repair-a':''}}"
+                        wx:for="{{item.serSets}}" wx:for-item='it'wx:for-index="in"
+                        bindtap="onSelect"data-index="{{in}}"data-ins="{{index}}"
+                        data-id="{{it.id}}">
+                        <view class="label maincolor"wx:if="{{userData.packageId == it.id}}">当前套餐</view>
+                        <view class="content-v-item-up">{{it.amount}}元</view>
+                        <view class="content-v-item-down">{{it.setRemark}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="more maincolor row"bindtap="onMore">
+        更多优惠套餐
+        <image class="{{more ? 'more-double':''}}" src="../../../img/doubleD.png"></image>
+    </view>
+    
+    <view class="button tag-a row"bindtap="onSubmit"data-tag='1'>
+        续费此套餐
+    </view>
+    <view class="popUp columns"wx:if="{{join}}">
+        <view class="popUp-out"catchtap="onPopD"></view>
+        <view class="popUp-content">
+            <view class="popUp-title row">付款详情</view>
+            <view class="content-item rows">
+                <view class="content-l flexrow">
+                    当前套餐
+                </view>
+                <view class="content-r">{{userData.packageName}}</view>
+            </view>
+            <view class="content-item rows">
+                <view class="content-l flexrow">
+                    缴费对象
+                </view>
+                <view class="content-r">{{userData.userId}}</view>
+            </view>
+            <view class="content-item rows">
+                <view class="content-l flexrow">
+                    付款方式
+                </view>
+                <view class="content-r">微信</view>
+            </view>
+            <view class="content-item rows">
+                <view class="content-l flexrow">
+                    支付金额
+                </view>
+                <view class="content-r maincolor">{{money}}元</view>
+            </view>
+            <view class="button tag-b row"bindtap="onSubmit"data-tag='2'>
+                确认支付
+            </view>
+        </view>
+    </view>
+</view>

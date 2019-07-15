@@ -1,0 +1,79 @@
+<!--pages/changePay/changePay.wxml-->
+<view class="container">
+    <view class="title row">付款详情</view>
+    <view class="content">
+        <view class="content-v rows">
+            <view class="content-v-l row">
+                当前套餐
+            </view>
+            <view class="content-v-r row">
+                {{broadband.packageName?broadband.packageName:'暂无'}}
+            </view>
+        </view>
+
+        <view class="content-v rows">
+            <view class="content-v-l row">
+                缴费时长
+            </view>
+            <view class="content-v-r row">
+                一周期
+            </view>
+        </view>
+        
+        <view class="content-v rows">
+            <view class="content-v-l row">
+                缴费对象
+            </view>
+            <view class="content-v-r row">
+                {{broadband.userId?broadband.userId :'宽带账号'}}
+            </view>
+        </view>
+        
+        <view class="content-v rows">
+            <view class="content-v-l row">
+                付款方式
+            </view>
+            <view class="content-v-r row">
+                微信
+            </view>
+        </view>
+        
+        <view class="content-v rows">
+            <view class="content-v-l row">
+                付款金额
+            </view>
+            <view class="content-v-r row">
+                <block wx:if="{{broadband.amount}}">
+                    <view class="price">{{broadband.amount}}</view>元
+                </block>
+                <block wx:else>无</block>
+            </view>
+        </view>
+    </view>
+    <view class="button row"bindtap="onDredge">
+        支付此套餐
+    </view>
+
+    <view class="popUp row"wx:if="{{popUp}}">
+        <view class="popUp-content">
+            <view class="popUp-content-c column">
+                <view class="popUp-content-c-icon">
+                    <image src="../img/jgao.png"></image>
+                </view>
+                <view class="popUp-content-c-title">
+                    请设置您的宽带登录密码：
+                </view>
+                <view class="popUp-content-c-tip">
+                    1、请牢记设置密码，如有遗忘，请去网络服务中心处理。
+                </view>
+                <view class="popUp-content-c-input row">
+                    <input type="text"bindinput="onInput"/>
+                </view>
+            </view>
+            <view class="popUp-content-bar flexrow">
+                <view class="popUp-bar-l row"bindtap="onCancel">取消</view>
+                <view class="popUp-bar-r row"bindtap="onConfirm">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

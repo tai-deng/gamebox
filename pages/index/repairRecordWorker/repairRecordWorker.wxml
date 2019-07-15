@@ -1,0 +1,49 @@
+<!--pages/index/repairRecordWorker/repairRecordWorker.wxml-->
+<view class="container">
+    <view class="tab flexrow">
+        <view class="tab-item row {{tabItem == index ? 'select': ''}}" data-index="{{index}}" bindtap='bindtap' wx:for="{{tabv}}" wx:key="{{item}}">
+            {{item}}
+        </view>
+    </view>
+    <view class="content"wx:for="{{list.result}}"wx:key="{{index}}"bindtap='onDetail'data-id="{{item.id}}">
+        <view class="content-title rows">
+            <view class="content-title-l flexrow">
+                <image src='../../img/bianhao.png' />
+                订单编号：{{item.orderNo}}
+            </view>
+            <view class="content-title-r">
+                {{tabv[item.processState]}}
+            </view>
+        </view>
+        <view class="content-ct flexrow">
+            <view class="content-ct-l">
+                <image src="{{item.img1}}"/>
+            </view>
+            <view class="content-ct-r flexcolumn">
+                <view class="content-ct-r-t">故障物品：{{item.repairArea}}</view>
+                <view class="content-ct-r-b flexrow">故障物品：
+                    <view class="adr">{{item.repairAddress}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="content-status">
+            <view class="content-status-t">
+                <block wx:if="{{items.processState==2}}">
+                    维修完毕请确认订单！
+                </block>
+                <block wx:elif="{{items.processState==3}}">
+                    维修完成
+                </block>
+                <block wx:else>
+                    等待您处理
+                </block>
+            </view>
+            <view class="content-status-b">
+                {{item.repairDate}}
+            </view>
+        </view>
+    </view>
+    <view class="content row" wx:if="{{!list.result[0]}}">
+        暂无数据
+    </view>
+</view>

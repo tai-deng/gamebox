@@ -1,0 +1,14 @@
+<!--pages/mine/feedback/feedback.wxml-->
+<view class="container">
+    <view class="record rows" catchtap="onRecord">
+        <view class="a"></view>
+        <view class="flexrow">
+            <image src="../../img/jilvfankui.png" />
+                反馈与记录
+        </view>
+    </view>
+    <view class="textare-warp">
+        <textarea name="leave" placeholder='请输入问题或建议，我们会尽快回复！'bindinput="onLeave"></textarea>
+    </view>
+    <view class="submit row" bindtap='submit'>发送</view>
+</view>

@@ -1,0 +1,86 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxdacdc73df016e665",
+	"projectname": "Intellectual",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "修改密码",
+					"pathName": "pages/signIn/forget",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "维修记录",
+					"pathName": "pages/index/repairRecordWorker/repairRecordWorker",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "故障报修",
+					"pathName": "pages/index/repairRecord/myRepair",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "报修详情",
+					"pathName": "pages/index/repairDetail/repairDetail",
+					"query": "orderId=40289186674db89f01674dcabfeb0000"
+				}
+			]
+		}
+	}
+}

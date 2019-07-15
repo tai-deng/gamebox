@@ -1,0 +1,99 @@
+<!--pages/mine/safety/safety.wxml-->
+<view class="container">
+    <view class="select-item rows"bindtap="onBind"data-tag="1"data-IdCard="{{data.IdCard}}">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/idCard.png"></image>
+            </view>
+            身份证号码：
+        </view>
+        <view class="select-item-r flexrow">
+            <block wx:if="{{data.IdCard}}">
+                {{data.IdCard}}
+            </block>
+            <block wx:else>
+                未绑定
+                <image src="../../img/next.png"></image>
+            </block>
+        </view>
+    </view>
+    <view class="select-item rows"bindtap="onBind"data-tag="2"data-mobileno="{{data.mobileno}}">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/phoneNum.png"></image>
+            </view>
+            手机号：
+        </view>
+        <view class="select-item-r flexrow">
+            <block wx:if="{{data.mobileno}}">
+                {{data.mobileno}}
+            </block>
+            <block wx:else>
+                未绑定
+            </block>
+            <image src="../../img/next.png"></image>
+        </view>
+    </view>
+    <view class="select-item rows"bindtap="onBind"data-tag="3"data-qq="{{data.qq}}">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/qq.png"></image>
+            </view>
+            QQ号：
+        </view>
+        <view class="select-item-r flexrow">
+            <block wx:if="{{data.qq}}">
+                {{data.qq}}
+            </block>
+            <block wx:else>
+                未绑定
+            </block>
+            <image src="../../img/next.png"></image>
+        </view>
+    </view>
+    <view class="select-item rows"bindtap="onBind"data-tag="4"data-wechat="{{data.wechat}}">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/wechat.png"></image>
+            </view>
+            微信号：
+        </view>
+        <view class="select-item-r flexrow">
+            <block wx:if="{{data.wechat}}">
+                {{data.wechat}}
+            </block>
+            <block wx:else>
+                未绑定
+            </block>
+            <image src="../../img/next.png"></image>
+        </view>
+    </view>
+    <view class="select-item rows"bindtap="onBind"data-tag="5"data-email="{{data.email}}">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/email.png"></image>
+            </view>
+            weibo：
+        </view>
+        <view class="select-item-r flexrow">
+            <block wx:if="{{data.email}}">
+                {{data.email}}
+            </block>
+            <block wx:else>
+                未绑定
+            </block>
+            <image src="../../img/next.png"></image>
+        </view>
+    </view>
+    <view class="select-item rows"bindtap="onBind"data-tag="6">
+        <view class="select-item-l flexrow">
+            <view class="select-item-icon">
+                <image src="../../img/shezhi.png"></image>
+            </view>
+            登录密码修改
+        </view>
+        <view class="select-item-r flexrow">
+            <image src="../../img/next.png"></image>
+        </view>
+    </view>
+</view>

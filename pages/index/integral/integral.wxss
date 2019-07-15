@@ -1,0 +1,43 @@
+/* pages/index/integral/integral.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9f7f2;
+}
+.title{
+    font-size: 30rpx;
+    padding: 20rpx;
+    color: #888888;
+    background-color: #fff8f5;
+    border-bottom: 1px solid #c8c7cc;
+}
+.details{
+    padding: 20rpx;
+    border-bottom: 1px solid #c8c7cc;
+    font-size: 26rpx;
+    color: #888888;
+}
+.details-icon image{
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+    margin-right: 20rpx;
+}
+.details-center{
+    flex: 1;
+}
+.details-center-top{
+    font-size: 28rpx;
+    color: #888;
+}
+.details-center-top-l{
+    margin-right: 20rpx;
+}
+.details-center-bottom {
+    font-size: 24rpx;
+    color: #999;
+}
+.details-right{
+    font-size: 28rpx;
+    color: #ff5800;
+}

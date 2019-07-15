@@ -1,0 +1,44 @@
+/* pages/mine/feedback/feedbackList.wxss */
+.container{
+    padding: 20rpx 20rpx 100rpx 20rpx;
+    background-color: #fff;
+    width: 100vw;
+    min-height: 100vh;
+}
+.list{
+    background-color: #fbfbfb;
+    font-size: 26rpx;
+    margin-bottom: 20rpx;
+    padding: 10rpx;
+    border-radius: 10rpx;
+}
+.list-top{
+    color: #999;
+}
+.list-content{
+    color: #666;
+    text-indent: 2em;
+    padding: 20rpx 0rpx;
+}
+.list-adm{
+    color: #999;
+    border-top: 1px dashed #999;
+}
+.list-adm-top-l{
+    color: #ff5800;
+}
+.list-adm-content{
+    color: #666;
+    padding: 20rpx 0rpx;
+}
+.submit {
+    position: fixed;
+    left: 25rpx;
+    bottom: 10rpx;
+    width: 700rpx;
+    height: 80rpx;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 40rpx;
+    background:-webkit-gradient(linear, 0% 0%, 100% 0%, from(#ff8f00), to(#ff5800));
+}

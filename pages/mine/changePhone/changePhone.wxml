@@ -1,0 +1,15 @@
+<!--pages/mine/changePhone/changePhone.wxml-->
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+    <view class="title">手机号：{{phone}}</view>
+    <view class="verify flexrow">
+        <view class="verify-l flex row">
+            <input type="text"name='verify'placeholder="请输入验证码" value="{{verify}}" placeholder-class="inputStyle" />
+        </view>
+        <view class="{{tap?'showbara':'showbar'}} row" bindtap="onVcode">{{show}}</view>
+    </view>
+    <button class="row {{disabled?'a':'b'}}" formType="submit" hover-class="none">
+        验证后绑定新号码
+    </button>
+</view>
+</form>

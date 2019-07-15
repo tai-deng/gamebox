@@ -1,0 +1,63 @@
+<!--pages/index/explain/explain.wxml-->
+<view class="container">
+    <view class="shifan flexcolumn" wx:if="{{flag == 'shifan'}}">
+        <view class="maincolor title">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数1，单终端不限流量，任意切换上网终端。</view>
+
+        <view>3、首次预存200元，移网首月免费，宽带按天计费.含2.5GB省内，500M全国、40GB本地流量、入网即送20BG（10GB/月）、50分钟/月、视频免费看。
+        <view class="maincolor inline">此套餐需携带有效证件在校内柜台办理。</view></view>
+
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">18573100636，18507311039</view></view>
+        <view>5、校园网服务中心地址：北校区阳光服务大厅；南校区南校门原招生就业处。</view>
+    </view>
+
+    <view class="youshi flexcolumn" wx:if="{{flag=='youshi'}}">
+        <view class="maincolor font14">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数2，单终端不限流量，任意切换上网终端（注：支持手机电脑同时在线，不支持两台手机或者两台电脑同时在线）。</view>
+        <view>3、校园卡套餐：首次预存100元，享受国内流量不限量，500分钟国内通话，集团网通话免费，套餐内含价值45元校园WIFI。
+        <view class="maincolor inline"> 此套餐需携带有效身份证在校园网服务中心办理。</view></view>
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">17773980868</view></view>
+        <view>5、校园网服务中心地址：学生宿舍楼2栋101门面。</view>
+    </view>
+
+    <view class="youshi flexcolumn" wx:if="{{flag=='hangkong'}}">
+        <view class="maincolor font14">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数2，单终端不限流量，任意切换上网终端</view>
+        <view>3、校园卡套餐：58元/月畅玩航院每个角落，校园信息卡免费送，每月100G流量（40G限速），150分钟国内通话免费送。
+        <view class="maincolor inline"> 此套餐需携带有效身份证在校园网服务中心办理。</view></view>
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">13217378859</view></view>
+        <view>5、校园网服务中心地址：圭塘在女生宿舍旁，跳马在士官楼一楼。</view>
+    </view>
+
+    <view class="youshi flexcolumn" wx:if="{{flag=='dazhongchuanmei'}}">
+        <!-- <view class="maincolor font14">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数2，单终端不限流量，任意切换上网终端</view>
+        <view>3、校园卡套餐：58元/月畅玩航院每个角落，校园信息卡免费送，每月100G流量（40G限速），150分钟国内通话免费送。
+        <view class="maincolor inline"> 此套餐需携带有效身份证在校园网服务中心办理。</view></view>
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">13217378859</view></view>-->
+        <view>地址：金岸学生公寓食堂进口右侧；后勤楼女生公寓A栋右侧。</view>
+    </view>
+
+    <view class="youshi flexcolumn" wx:if="{{flag=='shengwujidian'}}">
+        <!-- <view class="maincolor font14">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数2，单终端不限流量，任意切换上网终端</view>
+        <view>3、校园卡套餐：58元/月畅玩航院每个角落，校园信息卡免费送，每月100G流量（40G限速），150分钟国内通话免费送。
+        <view class="maincolor inline"> 此套餐需携带有效身份证在校园网服务中心办理。</view></view>
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">13217378859</view></view>-->
+        <view>地址：马坡校区:二教学楼一楼西侧智慧校园一卡通服务中心、东湖校区:6栋学生宿舍楼下智慧校园一卡通服务中心</view>
+    </view>
+    <view class="youshi flexcolumn" wx:if="{{flag=='qita'}}">
+        <!-- <view class="maincolor font14">校园网宽带资费说明:</view>
+        <view>1、有线、无线，终端数1，单终端不限流量。</view>
+        <view>2、有线+无线，终端数2，单终端不限流量，任意切换上网终端</view>
+        <view>3、校园卡套餐：58元/月畅玩航院每个角落，校园信息卡免费送，每月100G流量（40G限速），150分钟国内通话免费送。
+        <view class="maincolor inline"> 此套餐需携带有效身份证在校园网服务中心办理。</view></view>
+        <view>4、如遇到充值等其它问题，请拨打电话：<view class="maincolor inline">13217378859</view></view>-->
+        <view>完善中！</view>
+    </view>
+</view>

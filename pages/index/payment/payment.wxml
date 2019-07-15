@@ -1,0 +1,25 @@
+<!--pages/index/payment/payment.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="content-item flexrow">
+            <view class="content-item-l row">选择学校：</view>
+            <view class="content-item-r">
+                <picker bindchange="onOptions" data-tag="1" value="{{index}}" range="{{school}}">
+                    <view class="picker-l">{{school_v}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="content-item flexrow">
+            <view class="content-item-l row">缴费对象：</view>
+            <input class="content-item-r"bindinput="onInput" focus="true"bindfocus="onFocus"bindblur="onBlur" type="number"value="{{cnt_id}}"/>
+            <view class="clear">
+                <image wx:if="{{focus}}"bindtap="onClear" src="../../img/clear.png"></image>
+            </view>
+            
+        </view>
+    </view>
+    <view class="tip">默认登录账号</view>
+    <view class="button row"bindtap="onDredge">
+        下一步
+    </view>
+</view>

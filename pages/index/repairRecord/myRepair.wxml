@@ -1,0 +1,97 @@
+<!--pages/index/repairRecord/myRepair.wxml-->
+<form bindsubmit="onSubmit">
+<view class="container">
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/baoxiu.png"/>
+            报修项目:
+        </view>
+        <view class="repair-line-r">
+            <picker bindchange="onOptions" data-tag="item"range-key="opText" value="{{index}}" range="{{repairItem}}">
+                <view class="picker rows">
+                    <view class="picker-l">{{repair_v ? repair_v : '请选择维修的项目'}}</view>
+                    <view class="picker-r">
+                        <image src="../../img/down-pull.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/quyu.png"/>
+            报修区域:
+        </view>
+        <view class="repair-line-r">
+            <picker bindchange="onOptions" data-tag="area"range-key="opText" value="{{index}}" range="{{areaList}}">
+                <view class="picker rows">
+                    <view class="picker-l">{{area_v ? area_v : '请选择报修区域'}}</view>
+                    <view class="picker-r">
+                        <image src="../../img/down-pull.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+        </view>
+        <view class="repair-line-r">
+            <picker bindchange="onOptions" data-tag="region" range-key='opText' value="{{index}}" range="{{regionList}}">
+                <view class="picker rows">
+                    <view class="picker-l">{{region_v ? region_v : '请继续选择'}}</view>
+                    <view class="picker-r">
+                        <image src="../../img/down-pull.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/dizhi.png"/>
+            详细地址:
+        </view>
+        <view class="repair-line-r">
+            <input type="text" placeholder="请输入详细地址，如：房间号"name="dizhi"/>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/description.png"/>
+            详细描述:
+        </view>
+        <view class="repair-line-r">
+            <textarea type="text" placeholder="请描述物品及损坏情况"name="description"/>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="upload">
+            <block wx:if="{{upload.length<max_upimglen}}">
+                <image src="../../img/img.png" bindtap="bindupload" />
+            </block>
+            <image src="{{item}}" wx:for="{{upload}}" data-i='{{index}}' wx:key="{{index}}"bindlongpress="delimg" bindtap="bindpreview" />
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/ren.png"/>
+            报修人:
+        </view>
+        <view class="repair-line-r">
+            {{user.realname}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/lianxidianh.png"/>
+            联系电话:
+        </view>
+        <view class="repair-line-r">
+            {{user.mobileno}}
+        </view>
+    </view>
+    <button form-type="submit" class="submit row">提交</button>
+    <canvas canvas-id="my_canvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;position:absolute;left:-300px;top-300px;"></canvas>
+</view>
+</form>

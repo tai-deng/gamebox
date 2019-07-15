@@ -1,0 +1,60 @@
+/* pages/index/recharge/recharge.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+    padding-top: 30rpx;
+}
+.entry{
+    width:750rpx;
+    height: 80rpx;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+input{
+    flex: 1;
+    padding-left: 20rpx;
+    background-color: #fff;
+}
+.history{
+    margin: 30rpx 0;
+    font-size: 26rpx;
+    color: #ff5800;
+    text-align: right;
+    padding-right: 30rpx;
+}
+.recharge-title{
+    font-size: 30rpx;
+    color: #000000;
+    padding-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+.recharge{
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 25rpx;
+}
+.recharge-i-u{
+    font-size: 24rpx;
+}
+.recharge-i-b{
+    font-size: 20rpx;
+}
+.sa{
+    color: #fff;
+    background-color: #ff5800;
+    border: 1px solid #ff5800;
+}
+.sb{
+    border: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    background-color: #fff;
+}
+.recharge-i{
+    width: 120rpx;
+    height: 85rpx;
+    border-radius: 10rpx;
+    margin-left: 25rpx;
+    margin-bottom: 30rpx;
+}

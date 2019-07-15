@@ -1,0 +1,97 @@
+<!--pages/mine/mine.wxml-->
+<view class="container"wx:show="{{done}}">
+    <view class="no-login"wx:if="{{login}}">
+        <view class="no-login-top">
+            <image src='../img/bj-wine.png'></image>
+        </view>
+        <view class="no-login-tip row">毕业时约好一年一见，再聚首却已近而立之年</view>
+        <navigator url="/pages/signIn/signIn" bindtap='onDeal' open-type="reLaunch" hover-class="none" class="login row">登录</navigator>
+        <navigator url="/pages/register/register" bindtap='onDeal' open-type="reLaunch" hover-class="none" class="login row">注册</navigator>
+    </view>
+    <view class="in-login"wx:else>
+        <view class="in-login-top">
+            <view class="in-login-top-bg">
+                <image src='../img/touxiang.png'></image>
+            </view>
+            <view class="in-login-top-use column">
+                <view class="in-login-top-use-pic">
+                    <image src="{{avatarUrl}}"></image>
+                </view>
+                <view class="in-login-top-use-tel flexrow">
+                    <view class="in-login-top-use-tel-l">
+                        手机号码：{{data.mobileno}}
+                    </view>
+                    <image src='../img/xiugai.png'bindtap="onChangeTel"></image>
+                </view>
+            </view>
+        </view>
+        <view class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/xuehao.png'></image>
+                </view>
+                宽带账号：
+            </view>
+            {{data.workNumber}}
+        </view>
+        <view class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/xingming.png'></image>
+                </view>
+                真实姓名：
+            </view>
+            {{data.realname}}
+        </view>
+        <view class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/yuanxi.png'></image>
+                </view>
+                院系：
+            </view>
+            {{data.deptName}}
+        </view>
+        <view class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/banji.png'></image>
+                </view>
+                班级：
+            </view>
+            {{data.classname}}
+        </view>
+
+        <navigator url="/pages/mine/feedback/feedback" open-type="navigate"class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/pingjia.png'></image>
+                </view>
+                咨询与留言
+            </view>
+            希望您提供宝贵意见
+        </navigator>
+        
+        <navigator url="/pages/mine/safety/safety" open-type="navigate"class="in-login-i m-more rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/shezhi.png'></image>
+                </view>
+                安全信息设置
+            </view>
+            <image src='../img/next.png'></image>
+        </navigator>
+        <view class="in-login-i rows">
+            <view class="in-login-i-l flexrow">
+                <view class="in-login-i-l-icon row">
+                    <image src='../img/banben.png'></image>
+                </view>
+                版本号
+            </view>
+            1.0.0
+        </view>
+        <view class="in-login-i m-more qit row"bindtap="onQit">
+            安全退出
+        </view>
+    </view>
+</view>

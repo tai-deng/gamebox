@@ -1,0 +1,124 @@
+<!--pages/index/repairDetail/repairDetail.wxml-->
+<view class="container">
+    <view class="repair-line">
+        <view class="progress-info-bg">
+            <view class="progress-tune"style="width:{{width}};"></view>
+        </view>
+        <view class="progress rows">
+            <view class="progress-inifo-date">处理时间：{{data.createTime}}</view>
+            <view class="progress-info-status">{{data.state}}</view>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/bianhao.png"/>
+            订单编号:
+        </view>
+        <view class="repair-line-r">
+            {{data.orderNo}}
+        </view>
+    </view>
+    <view class="repair-line flexrow"wx:if="{{data.processPeople}}">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/quyu.png"/>
+            处理人:
+        </view>
+        <view class="repair-line-r">
+            {{data.processPeople}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/quyu.png"/>
+            报修区域:
+        </view>
+        <view class="repair-line-r">
+            {{data.repairArea}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/baoxiu.png"/>
+            报修项目:
+        </view>
+        <view class="repair-line-r">
+        {{data.repairProject}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/dizhi.png"/>
+            详细地址:
+        </view>
+        <view class="repair-line-r">
+            {{data.repairAddress}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/description.png"/>
+            详细描述:
+        </view>
+        <view class="repair-line-r">
+            {{data.description}}
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="upload">
+            <image src="{{item}}" wx:for="{{data.upload}}" data-i='{{index}}' wx:key="{{index}}" bindtap="bindpreview" />
+            <view class="row" wx:if="{{data.uploadState}}">暂无图片</view>
+        </view>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/ren.png"/>
+            {{data.identity}}:
+        </view>
+        <block wx:if="{{role == '维修人员角色'}}">
+        <view class="repair-line-r">                
+                {{data.repairPeople?data.repairPeople:'待处理'}}
+            </view>
+        </block>
+        <block wx:else>
+        <view class="repair-line-r">
+                {{data.processPeople?data.processPeople:'待处理'}}
+            </view>
+        </block>
+    </view>
+    <view class="repair-line flexrow">
+        <view class="repair-line-l flexrow">
+            <image src="../../img/lianxidianh.png"/>
+            联系电话:
+        </view>
+        <block wx:if="{{role == '维修人员角色'}}">
+            <view class="repair-line-r phone"bindtap='onPlayCall'data-phone='{{data.repairPhone}}'>
+                {{data.repairPhone?data.repairPhone:'暂无'}}
+            </view>
+        </block>
+        <block wx:else>
+            <view class="repair-line-r phone"bindtap='onPlayCall'data-phone='{{data.repairPhone}}'>
+                {{data.data1?data.data1:'暂无'}}
+            </view>
+        </block>
+    </view>
+    <view class="repair-line flexrow"wx:if="{{select}}">
+        <view class="repair-line-l flexrow">
+            故障类型：
+        </view>
+        <view class="repair-line-r">
+            <picker bindchange="onOptions" data-tag="region" range-key='opText' value="{{index}}" range="{{regionList}}">
+                <view class="picker rows">
+                    <view class="picker-l">{{region_v ? region_v : '请选择故障类型'}}</view>
+                    <view class="picker-r">
+                        <image src="../../img/down-pull.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="repair-line" wx:if="{{focus}}">
+        <textarea placeholder= '{{placeholder}}'
+            bindinput="bindleave" value="{{leave}}" disabled="{{disabled}}" bindfocus="{{focus}}"></textarea>
+    </view>
+    <button class="submit row" bindtap='onBtn'>{{data.btnText}}</button>
+</view>

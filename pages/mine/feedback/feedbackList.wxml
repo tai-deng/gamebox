@@ -1,0 +1,19 @@
+<!--pages/mine/feedback/feedbackList.wxml-->
+<view class="container">
+    <view class="list" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="list-top">
+            反馈时间：{{item.messageDate}}
+        </view>
+        <view class="list-content">
+            {{item.messageRemark}}
+        </view>
+        <view class="list-adm"wx:if="{{item.replyDate}}">
+            <view class="list-adm-top flexrow">
+                <view class="list-adm-top-l">管理员回复：</view>
+                {{item.replyDate}}
+            </view>
+            <view class="list-adm-content">{{item.replyRemark}}</view>
+        </view>
+    </view>
+    <view class="submit row" bindtap='submit'>返回</view>
+</view>

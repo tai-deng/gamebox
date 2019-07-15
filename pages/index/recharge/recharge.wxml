@@ -1,0 +1,17 @@
+<!--pages/index/recharge/recharge.wxml-->
+<view class="container">
+    <view class="entry flexrow">
+        <input type="number"placeholder="请输入电话号码" value="{{phone}}"focus='true' bindinput="onEntry" placeholder-class="inputStyle"/>
+    </view>
+    <view class="entry"wx:if="{{city}}">
+        {{city}}
+    </view>
+    <navigator url="/pages/index/integral/integral" class="history"bindtap="onHistory" hover-class="none">缴费历史</navigator>
+    <view open-type="navigate"class="recharge-title">充话费</view>
+    <view class="recharge">
+        <view class="recharge-i {{item.w?'sa':'sb'}} column"wx:for="{{recharge}}"data-index="{{index}}"bindtap="onChoose">
+            <view class="recharge-i-u">{{item.amountRemark}}元</view>
+            <view class="recharge-i-b">售价{{item.payAmount}}元</view>
+        </view>
+    </view>
+</view>

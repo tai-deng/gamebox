@@ -1,0 +1,103 @@
+/* pages/mine/mine.wxss */
+.no-login{}
+.no-login-top{}
+.no-login-top > image {
+    width: 750rpx;
+    height: 348rpx;
+    display: block;
+}
+.no-login-tip{
+    font-size: 24rpx;
+    color: #9a9a9a;
+    margin-top: 20rpx;
+    margin-bottom: 120rpx;
+}
+.login{
+    width: 680rpx;
+    margin-left: 30rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-bottom: 40rpx;
+    font-size: 32rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.in-login{
+    width: 100vw;
+    height: 100vh;
+    background-color: #e5e5e5;
+}
+.in-login-top{
+    width: 750rpx;
+    height: 381rpx;
+    position: relative;
+}
+.in-login-top-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 381rpx;
+    z-index: 1;
+}
+.in-login-top-bg > image {
+    width: 750rpx;
+    height: 381rpx;
+    display: block;
+}
+.in-login-top-use{
+    position: relative;
+    z-index: 2;
+    width: 750rpx;
+    height: 381rpx;
+    background: rgba(0, 0, 0, 0.6);
+}
+.in-login-top-use-pic{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-bottom: 52rpx;
+}
+.in-login-top-use-pic >image {
+    width: 148rpx;
+    height: 148rpx;
+    display: block;
+    border-radius: 50%;
+}
+.in-login-top-use-tel {
+     font-size: 24rpx;
+     color:#fff;
+}
+.in-login-top-use-tel > image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    margin-left: 18rpx;
+}
+.in-login-i{
+    padding-right: 30rpx;
+    height: 80rpx;
+    margin-top: 2rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+    color: #5e5e5e;
+}
+.in-login-i-l-icon{
+    width: 68rpx;
+}
+.in-login-i-l-icon > image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.m-more{
+    margin-top: 33rpx;
+}
+.m-more > image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.qit {
+    font-size: 28rpx;
+    color: #ff5800;
+}

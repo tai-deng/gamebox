@@ -1,0 +1,107 @@
+/* pages/signIn/forget.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 35rpx;
+}
+.entry{
+    width: 690rpx;
+    height: 80rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 10rpx;
+    margin-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+.inputStyle {
+    font-size: 26rpx;
+    color: #9a9a9a;
+}
+.text-tip{
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    color: #9a9a9a;
+    margin-bottom: 60rpx;
+}
+.next{
+    width: 690rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    margin-left: 30rpx;
+    font-size: 32rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+input{
+    padding-left: 30rpx;
+    width: 100%;
+}
+.text-tip-b{
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    color: #000000;
+    margin-bottom: 30rpx;
+}
+
+/* 2 */
+.entry-warp{
+    width: 690rpx;
+    height: 80rpx;
+    margin-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+.input-warp{
+    width: 450rpx;
+    height: 80rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 10rpx;
+}
+.entry-warp > input {
+    width: 450rpx;
+}
+.showbar{
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.showbara{
+    width: 200rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+    background: #cccccc;
+}
+/* 3 */
+.eye image{
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    margin-right: 5rpx;
+}
+.input-warp-b{
+    width: 620rpx;
+    height: 80rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 10rpx;
+
+}
+/* 4 */
+.done{
+    font-size: 28rpx;
+    color: #ff8f00;
+    margin-bottom: 50rpx;
+}
+.done > image {
+    width: 173rpx;
+    height: 116rpx;
+    display: block;
+    margin-bottom: 10rpx;
+}
+.done-warp{
+    width: 100vw;
+    height: 70%;
+}

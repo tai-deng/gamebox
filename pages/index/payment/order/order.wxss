@@ -1,0 +1,160 @@
+/* pages/index/payment/order/order.wxss */
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 130rpx;
+    background-color: #f9f7f2;
+}
+.user-title{
+    padding: 20rpx 15rpx;
+}
+.user-title-l{
+    font-size: 30rpx;
+    color: #000000;
+}
+.user-title-r{
+    font-size: 24rpx;
+    color: #ff5800;
+}
+.user-title-r image{
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.content{
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+.content-item{
+    padding: 20rpx 15rpx;
+    font-size: 26rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+.content-l{
+    color: #999999;
+}
+.content-l-icon{
+    margin-right: 15rpx;
+}
+.content-l-icon image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.content-r{
+    color: #888888;
+}
+.maincolor{
+    color: #ff5800;
+}
+.more-double{
+    transform: rotate(180deg);
+}
+.num-bar{
+    width: 200rpx;
+    font-size: 30rpx;
+}
+.arrange{
+    justify-content: flex-end;
+    border: none;
+}
+.num-bar-l image{
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+}
+.num-bar-c{
+    flex: 1;
+}
+.more{
+    font-size: 26rpx;
+    background-color: #fff;
+    padding: 20rpx;
+}
+.more image {
+    width: 26rpx;
+    height: 26rpx;
+    display: block;
+}
+.content-title{
+    padding: 20rpx;
+    font-size: 26rpx;
+}
+.content-v{
+    padding-left: 20rpx;
+}
+.content-v-item{
+    width: 220rpx;
+    height: 120rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    color: #888888;
+    font-size: 24rpx;
+
+}
+.label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0rpx 10rpx;
+    font-size: 20rpx;
+    background-color: #ff5800;
+    color: #fff;
+}
+.button{
+    width: 680rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 26rpx;
+    color: #ffffff;
+    background:linear-gradient(to right,#ff8f00,#ff5100);
+}
+.tag-a{
+    position: fixed;
+    z-index: 1;
+    left: 35rpx;
+    bottom: 25rpx;
+}
+.tag-b {
+    margin: 25rpx 35rpx;
+}
+.repair{
+    padding-top: 0;
+}
+.repair-a{
+    border: 1px solid #ff5800;
+    color: #ff5800;
+    position: relative;
+}
+.v-b {
+    border: 1px solid #f1f1f1;
+    border-radius: 10rpx;
+}
+.v-a {
+    border: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+}
+
+.popUp{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, .4);
+}
+.popUp-out{
+    width: 750rpx;
+    flex: 1;
+}
+.popUp-content{
+    width: 750rpx;
+    background-color: #fff;
+}
+.popUp-title{
+    padding: 20rpx;
+    font-size: 26rpx;
+    color: #ff5800;
+    background-color: #f9f7f2;
+}
